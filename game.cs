@@ -142,26 +142,19 @@ namespace Template
                 // this is your CPU only path
                 float scale = 1.0f / (float)++spp;
 
-				for (int y = 0; y < screen.height; y++)
-				{
-					for (int x = 0; x < screen.width; x++)
-					{
+                Parallel.For(0, screen.height, (y) =>
+                 {
+                     Parallel.For(0, screen.width, (x) =>
+                     {
                          // generate primary ray
                          Ray ray = camera.Generate(RTTools.GetRNG(), x, y);
                          // trace path
                          int pixelIdx = x + y * screen.width;
                          accumulator[pixelIdx] += Sample(ray, 0);
                          // plot final color
-                         screen.pixels[pixelIdx] = RTTools.Vector3ToIntegerRGB(scale * accumulator[pixelIdx]);						
-					}
-				}
-                /*Parallel.For(0, screen.height, (y) =>
-                 {
-                     Parallel.For(0, screen.width, (x) =>
-                     {
-
+                         screen.pixels[pixelIdx] = RTTools.Vector3ToIntegerRGB(scale * accumulator[pixelIdx]);
                      });
-                 });*/
+                 });
             }
 
             // stop and report when max render time elapsed

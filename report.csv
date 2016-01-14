@@ -1,0 +1,38 @@
+Testcase;Status;Tijd;CPU;Omschrijving
+Referentie;Error;15;15.00;100%
+
+------------------------------------
+
+1;Referentie;Error;15;15.00;100%
+Test 1 - Referentie
+Benchmark van ons referentieprogramma
+
+Uitvoer:
+(leeg)
+
+Foutmelding:
+Unhandled Exception:
+System.DllNotFoundException: kernel32
+  at (wrapper managed-to-native) Template.WinFileIO:CreateFile (string,uint,uint,uint,uint,uint,int)
+  at Template.WinFileIO.OpenForReading (System.String FileName) <0x4107a9b0 + 0x00047> in <filename unknown>:0 
+  at Template.Scene..ctor () <0x4107a070 + 0x0044b> in <filename unknown>:0 
+  at Template.Game.Init (Int32 rt, Boolean gpu) <0x41079c80 + 0x000ab> in <filename unknown>:0 
+  at Template.OpenTKApp.OnLoad (System.EventArgs e) <0x410778a0 + 0x00183> in <filename unknown>:0 
+  at OpenTK.GameWindow.OnLoadInternal (System.EventArgs e) <0x41077870 + 0x00018> in <filename unknown>:0 
+  at OpenTK.GameWindow.Run (Double updates_per_second, Double frames_per_second) <0x410766e0 + 0x001e7> in <filename unknown>:0 
+  at Template.OpenTKApp.Main (System.String[] args) <0x4105af20 + 0x000bb> in <filename unknown>:0 
+[ERROR] FATAL UNHANDLED EXCEPTION: System.DllNotFoundException: kernel32
+  at (wrapper managed-to-native) Template.WinFileIO:CreateFile (string,uint,uint,uint,uint,uint,int)
+  at Template.WinFileIO.OpenForReading (System.String FileName) <0x4107a9b0 + 0x00047> in <filename unknown>:0 
+  at Template.Scene..ctor () <0x4107a070 + 0x0044b> in <filename unknown>:0 
+  at Template.Game.Init (Int32 rt, Boolean gpu) <0x41079c80 + 0x000ab> in <filename unknown>:0 
+  at Template.OpenTKApp.OnLoad (System.EventArgs e) <0x410778a0 + 0x00183> in <filename unknown>:0 
+  at OpenTK.GameWindow.OnLoadInternal (System.EventArgs e) <0x41077870 + 0x00018> in <filename unknown>:0 
+  at OpenTK.GameWindow.Run (Double updates_per_second, Double frames_per_second) <0x410766e0 + 0x001e7> in <filename unknown>:0 
+  at Template.OpenTKApp.Main (System.String[] args) <0x4105af20 + 0x000bb> in <filename unknown>:0
+
+De afwijking van de referentie-afbeelding was te groot (rmse > 150).
+
+Unix 4.3.3.2 (x64)
+.NET version: 4.0.30319.17020
+4 physical core(s), 4 virtual core(s) (hyperthreading), 1 processor(s)
